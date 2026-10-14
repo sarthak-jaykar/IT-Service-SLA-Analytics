@@ -1,0 +1,13 @@
+service_id,service_name,service_group,support_team
+S01,Laptops & Desktops,End User Computing,Service Desk
+S02,Printing,End User Computing,Service Desk
+S03,Email & Calendar,Collaboration,Service Desk
+S04,Collaboration Tools,Collaboration,Service Desk
+S05,VPN & Remote Access,Network,Infrastructure & Network
+S06,Wi-Fi & LAN,Network,Infrastructure & Network
+S07,Telephony,Network,Infrastructure & Network
+S08,ERP (Finance & Procurement),Business Applications,Applications Support
+S09,HR Portal,Business Applications,Applications Support
+S10,CRM,Business Applications,Applications Support
+S11,Identity & Access,Security,Security & Access
+S12,Endpoint Security,Security,Security & Access

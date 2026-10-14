@@ -1,0 +1,7 @@
+{
+  "name": "ITSM Minimal",
+  "dataColors": ["#1F4E79", "#5B8DB8", "#A9C4DE", "#C0392B", "#7F8C8D", "#E5A93C"],
+  "background": "#FFFFFF",
+  "foreground": "#2B2B2B",
+  "tableAccent": "#1F4E79"
+}

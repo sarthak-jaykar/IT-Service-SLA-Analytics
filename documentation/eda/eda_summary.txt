@@ -1,0 +1,130 @@
+
+======================================================================
+PART 1: REFERENCE KPIs (reconcile Power BI against these)
+======================================================================
+Total Tickets         : 1500
+Resolved Tickets      : 1378
+Open Backlog          : 122
+SLA Met Tickets       : 1127
+SLA Breached Tickets  : 251
+SLA Compliance %      : 81.79%
+Avg Resolution Hours  : 29.18
+Overdue Open Tickets  : 110
+Avg Backlog Age (days): 94.54
+
+======================================================================
+PART 2: BRIEF EDA
+======================================================================
+
+-- Mix --
+ticket_type
+Incident           1100
+Service Request     400
+
+-- Tickets by month --
+created_date
+2025-01    129
+2025-02    100
+2025-03    125
+2025-04    125
+2025-05    128
+2025-06    109
+2025-07    138
+2025-08     99
+2025-09    133
+2025-10    147
+2025-11    135
+2025-12    132
+
+-- By priority (Q1) --
+             tickets  compliance_%  avg_res_hrs  open_backlog  overdue_open
+priority                                                                   
+P1 Critical       45          62.2          4.3             0             0
+P2 High          169          66.2          7.0             9             9
+P3 Medium        787          81.4         23.0            56            53
+P4 Low           499          90.0         50.0            57            48
+
+-- By category (Q1) --
+                        tickets  compliance_%  avg_res_hrs  open_backlog  overdue_open
+category                                                                              
+Performance                 149          71.7         30.3            11             9
+Hardware                    289          79.5         32.8            16            13
+Software                    417          81.0         30.7            38            34
+Access & Permissions        414          84.9         28.9            44            42
+Network & Connectivity      176          86.8         22.2             9             8
+Security                     55          88.2         20.4             4             4
+
+-- SLA compliance %: category x priority (Q1; incidents + requests) --
+priority                P1 Critical  P2 High  P3 Medium  P4 Low
+category                                                       
+Access & Permissions           75.0     63.6       85.9    90.5
+Hardware                       54.5     77.4       75.5    89.8
+Network & Connectivity        100.0     71.4       86.8    92.0
+Performance                     0.0     56.0       71.2    84.3
+Security                        NaN     88.9       80.8   100.0
+Software                       50.0     58.5       81.6    90.1
+
+-- By service, sorted by avg resolution hours (Q3) --
+                             tickets  compliance_%  avg_res_hrs  open_backlog  overdue_open
+service_name                                                                               
+HR Portal                         82          70.7         40.0             7             7
+Telephony                         45          71.1         37.6             7             6
+ERP (Finance & Procurement)      124          67.3         34.4            17            16
+Endpoint Security                 40          86.1         34.3             4             3
+CRM                               76          65.8         33.5             3             2
+Identity & Access                163          84.4         32.1            22            21
+Laptops & Desktops               343          84.9         29.9            19            16
+VPN & Remote Access              110          83.7         28.5             6             5
+Collaboration Tools              165          90.2         26.0            12            11
+Wi-Fi & LAN                      107          79.6         25.7             4             4
+Email & Calendar                 166          91.3         21.1            17            16
+Printing                          79          78.7         19.7             4             3
+
+-- By support team --
+                          tickets  compliance_%  avg_res_hrs  open_backlog  overdue_open
+support_team                                                                            
+Applications Support          282          67.8         35.8            27            25
+Infrastructure & Network      262          80.0         28.7            17            15
+Security & Access             203          84.7         32.5            26            24
+Service Desk                  753          86.7         26.1            52            46
+
+-- Backlog by service (Q2) --
+                             open_backlog  overdue_open
+service_name                                           
+Identity & Access                      22            21
+Laptops & Desktops                     19            16
+ERP (Finance & Procurement)            17            16
+Email & Calendar                       17            16
+Collaboration Tools                    12            11
+HR Portal                               7             7
+Telephony                               7             6
+VPN & Remote Access                     6             5
+Endpoint Security                       4             3
+Printing                                4             3
+Wi-Fi & LAN                             4             4
+CRM                                     3             2
+
+-- Backlog by category (Q2) --
+                        open_backlog  overdue_open
+category                                          
+Access & Permissions              44            42
+Software                          38            34
+Hardware                          16            13
+Performance                       11             9
+Network & Connectivity             9             8
+Security                           4             4
+
+-- 10 oldest open tickets --
+ticket_id                service_name  priority      status  backlog_age_days
+ REQ-0014           Identity & Access P3 Medium In Progress            355.58
+ INC-0059 ERP (Finance & Procurement) P3 Medium        Open            343.38
+ INC-0133           Identity & Access P3 Medium        Open            316.40
+ REQ-0059                         CRM P3 Medium In Progress            313.34
+ REQ-0076 ERP (Finance & Procurement) P3 Medium In Progress            298.41
+ INC-0194          Laptops & Desktops    P4 Low        Open            295.55
+ INC-0245                   Telephony P3 Medium In Progress            280.60
+ INC-0255            Email & Calendar P3 Medium        Open            278.56
+ INC-0266            Email & Calendar    P4 Low In Progress            272.58
+ INC-0272            Email & Calendar    P4 Low In Progress            271.34
+
+(Output also saved to E:\Power bi adv\it-systems-analytics\IT-Service-SLA-Analytics\documentation\eda\eda_summary.txt)

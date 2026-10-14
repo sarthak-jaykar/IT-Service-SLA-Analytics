@@ -1,0 +1,33 @@
+======================================================================
+PART 1: VALIDATION
+======================================================================
+[PASS] Row counts  (fact=1500, service=12, date=365)
+[PASS] fact_tickets has 13 columns
+[PASS] ticket_id is unique
+[PASS] No duplicate rows (ignoring ticket_id)
+[PASS] No nulls in required fields
+[PASS] Every service_id exists in dim_service
+[PASS] Every created_date exists in dim_date
+[PASS] dim_service / dim_date keys unique
+[PASS] created_datetime within 2025
+[PASS] created_date matches created_datetime
+[PASS] resolved_datetime >= created_datetime
+[PASS] resolved_datetime <= snapshot
+[PASS] Resolved: has resolved_datetime & resolution_hours, no backlog_age_days
+[PASS] Open/In Progress: has backlog_age_days, no resolved_datetime/resolution_hours
+[PASS] resolution_hours matches timestamp difference (tol 0.1h)
+[PASS] backlog_age_days matches snapshot - created (tol 0.01d)
+[PASS] sla_target_hours matches policy for every type/priority
+[PASS] Service Requests are only P3/P4
+[PASS] sla_outcome agrees with SLA rules  (mismatches=0)
+[PASS] ticket_type values
+[PASS] priority values
+[PASS] status values
+[PASS] category values
+[PASS] sla_outcome values
+[PASS] Total tickets 1,400-1,600  (1500)
+[PASS] Overall SLA compliance 70-90%  (81.8%)
+[PASS] Backlog 6-12% of tickets  (8.1%)
+[PASS] P1 is 3-6% of incidents  (4.1%)
+
+VALIDATION RESULT: 28/28 checks passed
