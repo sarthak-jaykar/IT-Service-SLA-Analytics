@@ -8,13 +8,17 @@
 ![Data Model](https://img.shields.io/badge/Data%20Model-Star%20Schema-blue)
 ![Domain](https://img.shields.io/badge/Domain-Systems%20%26%20IT%20Management-success)
 
+[![Dashboard Preview](Screenshots/01_it_service_overview.png)](Screenshots/01_it_service_overview.png)
+
+*Select the image to view it at full size.*
+
 ---
 
 ## Project Overview
 
 This project presents a simulated **IT service performance analytics solution** for **Meridian Services Ltd**, a fictional mid-sized company whose IT support organisation handles incidents and service requests across 12 IT services and 4 support teams.
 
-It is the final domain project in my portfolio (Systems / IT Management). It focuses on **measuring service performance**: which tickets miss their SLA, where unresolved tickets accumulate, and which services resolve slowest.
+This is the Systems / IT Management domain project in my portfolio. It focuses on **measuring service performance**: which tickets miss their SLA, where unresolved tickets accumulate, and which services resolve slowest.
 
 The report separates **SLA targets** (the policy) from **actual outcomes** (Met, Breached, Open - Within SLA, Open - Overdue), and reports overdue open tickets next to SLA compliance so that compliance is never flattered by tickets that have not yet closed.
 
